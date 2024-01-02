@@ -3,7 +3,6 @@ import mongoose from 'mongoose'
 import User from '../app/models/User'
 import Product from '../app/models/Product'
 import Category from '../app/models/Category'
-import configDatabase from '../config/database'
 
 const models = [User, Product, Category]
 
@@ -14,7 +13,9 @@ class Database {
   }
 
   init() {
-    this.connection = new Sequelize(configDatabase)
+    this.connection = new Sequelize(
+      'postgresql://postgres:g1g2E4AA*a**aCe2aC53cbDD*aE*FgbC@monorail.proxy.rlwy.net:28809/railway',
+    )
 
     try {
       this.connection.authenticate()
@@ -33,7 +34,7 @@ class Database {
   async mongo() {
     try {
       this.mongoConnection = await mongoose.connect(
-        'mongodb://localhost:27017/codeburger',
+        'mongodb://mongo:cAgaCa3gH5A25gE4Hb5FCdhBbBBC-5gD@viaduct.proxy.rlwy.net:48904',
       )
       console.log('MongoDB connection has been established successfully.')
     } catch (error) {
