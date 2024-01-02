@@ -14,7 +14,7 @@ class Database {
 
   init() {
     this.connection = new Sequelize(
-      'postgresql://postgres:g1g2E4AA*a**aCe2aC53cbDD*aE*FgbC@monorail.proxy.rlwy.net:28809/railway',
+      'postgresql://postgres:254dDed4baFfD6CE641B2FB-2BA*3e-g@viaduct.proxy.rlwy.net:25632/railway',
     )
 
     try {
@@ -34,7 +34,7 @@ class Database {
   async mongo() {
     try {
       this.mongoConnection = await mongoose.connect(
-        'mongodb://mongo:cAgaCa3gH5A25gE4Hb5FCdhBbBBC-5gD@viaduct.proxy.rlwy.net:48904',
+        'mongodb://mongo:6ecC43ecHE6HfcCBEBGd3agcaBc4hCf1@monorail.proxy.rlwy.net:16477',
       )
       console.log('MongoDB connection has been established successfully.')
     } catch (error) {
