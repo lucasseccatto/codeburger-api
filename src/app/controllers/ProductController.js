@@ -18,9 +18,9 @@ class ProductController {
       return res.status(400).json({ error: err.errors })
     }
 
-    const { admin: isAdmin } = await User.findByPk(req.userId)
+    const userRecord = await User.findByPk(req.userId)
 
-    if (!isAdmin) {
+    if (!userRecord || !userRecord.admin) {
       return res.status(401).json()
     }
 
@@ -67,9 +67,9 @@ class ProductController {
       return res.status(400).json({ error: err.errors })
     }
 
-    const { admin: isAdmin } = await User.findByPk(req.userId)
+    const userRecord = await User.findByPk(req.userId)
 
-    if (!isAdmin) {
+    if (!userRecord || !userRecord.admin) {
       return res.status(401).json()
     }
 
